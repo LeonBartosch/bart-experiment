@@ -6,6 +6,7 @@ clients = []
 client_ids = {}  # Maps socket to player number
 next_player_id = 1
 MAX_PLAYERS = 5
+MAX_LEADERBOARD = 8
 
 leaderbord = []
 
@@ -31,7 +32,7 @@ def handle_client(conn, addr):
                 message_obj = json.loads(data.decode())
                 leaderbord.append(message_obj)
                 leaderbord = sorted(leaderbord, key=lambda x: int(x["pumps"]), reverse=True)
-                leaderbord = leaderbord[:8]
+                leaderbord = leaderbord[:MAX_LEADERBOARD]
                 print(leaderbord)
                 
                 # Relay message to other clients

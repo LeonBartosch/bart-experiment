@@ -194,7 +194,7 @@ def createTrialHandler(colorList, maxPumps, REPETITIONS, REWARD):
     return trials
 
 
-def showInstruction(img, wait=30):
+def showInstruction(img, wait=300):
     """Show an instruction and wait for a response"""
     instruction = visual.ImageStim(
         win,
